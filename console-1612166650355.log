@@ -1,0 +1,485 @@
+typeof Array;
+"function"
+typeof Object;
+"function"
+function show(){
+console.log("i am show ");
+}
+undefined
+typeof show;
+"function"
+show();
+VM145:2 i am show 
+undefined
+show(10,20);
+VM145:2 i am show 
+undefined
+show([10,20]);
+VM145:2 i am show 
+undefined
+show(1,"Amit",true);
+VM145:2 i am show 
+undefined
+console.dir(show);
+VM374:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM145:1[[Scopes]]: Scopes[1]
+undefined
+function show(){
+console.log("i am show ",arguments.length);
+}
+undefined
+show();
+VM445:2 i am show  0
+undefined
+show(10,20);
+VM445:2 i am show  2
+undefined
+show(1,"Amit",true);
+VM445:2 i am show  3
+undefined
+function add(){
+console.log(sum, i);
+var sum = 0;
+for(var i = 0;i<arguments.length; i++){
+
+}
+}
+undefined
+add();
+VM680:2 undefined undefined
+undefined
+add(10,20);
+VM680:2 undefined undefined
+undefined
+function add(){
+console.log(sum, i);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+
+}
+}
+undefined
+add();
+VM753:2 Uncaught ReferenceError: i is not defined
+    at add (<anonymous>:2:18)
+    at <anonymous>:1:1
+add @ VM753:2
+(anonymous) @ VM772:1
+function add(){
+console.log(sum);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+
+}
+}
+undefined
+add();
+VM792:2 undefined
+undefined
+function add(){
+//console.log(sum);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(10,20);
+30
+add(10,20,30,40,50,60);
+210
+add(10,20,30,"40",50,60);
+"60405060"
+function add(){
+//console.log(sum);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(10,20,30,"40",50,60);
+210
+parseInt("one");
+NaN
+NaN + 4343;
+NaN
+add(10,20,30,"40",'one',60);
+NaN
+function add(){
+//console.log(sum);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(10,20,30,"40",'one',60);
+160
+function one(){
+return 1;
+}
+undefined
+add(one,10,"20",30,"one");
+60
+parseInt(one);
+NaN
+function add(){
+//console.log(sum);
+var sum = 0;
+for(let i = 0;i<arguments.length; i++){
+if(typeof arguments[i]=='function'){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(one,10,"20",30,"one");
+61
+one();
+1
+one;
+ƒ one(){
+return 1;
+}
+function test(){
+console.log('1st ',v);
+var v = 100;
+console.log('2nd ',v);
+if(10>2){
+var v = 200;
+console.log('3rd ',v);
+}
+var v = 400;
+console.log('4th ',v);
+}
+undefined
+test();
+VM1830:2 1st  undefined
+VM1830:4 2nd  100
+VM1830:7 3rd  200
+VM1830:10 4th  400
+undefined
+function test(){
+console.log('1st ',v);
+let v = 100;
+console.log('2nd ',v);
+if(10>2){
+let v = 200;
+console.log('3rd ',v);
+}
+let v = 400;
+console.log('4th ',v);
+}
+VM1877:9 Uncaught SyntaxError: Identifier 'v' has already been declared
+function test(){
+console.log('1st ',v);
+let v = 100;
+console.log('2nd ',v);
+if(10>2){
+let v = 200;
+console.log('3rd ',v);
+}
+//let v = 400;
+console.log('4th ',v);
+}
+undefined
+test();
+VM1882:2 Uncaught ReferenceError: Cannot access 'v' before initialization
+    at test (<anonymous>:2:20)
+    at <anonymous>:1:1
+test @ VM1882:2
+(anonymous) @ VM1902:1
+function test(){
+//console.log('1st ',v);
+let v = 100;
+console.log('2nd ',v);
+if(10>2){
+let v = 200;
+console.log('3rd ',v);
+}
+//let v = 400;
+console.log('4th ',v);
+}
+undefined
+test();
+VM1910:4 2nd  100
+VM1910:7 3rd  200
+VM1910:10 4th  100
+undefined
+var x = 1000;
+undefined
+window.x;
+1000
+x;
+1000
+window.test();
+VM1910:4 2nd  100
+VM1910:7 3rd  200
+VM1910:10 4th  100
+undefined
+test();
+VM1910:4 2nd  100
+VM1910:7 3rd  200
+VM1910:10 4th  100
+undefined
+var x = 2000;
+undefined
+x;
+2000
+let bb = 434;
+undefined
+window.bb;
+undefined
+bb;
+434
+let bb = 5545;
+undefined
+bb;
+5545
+function test(){
+//console.log('1st ',v);
+rrrr = 10000;
+let v = 100;
+console.log('2nd ',v);
+if(10>2){
+let v = 200;
+console.log('3rd ',v);
+}
+//let v = 400;
+console.log('4th ',v);
+}
+undefined
+test();
+VM2269:5 2nd  100
+VM2269:8 3rd  200
+VM2269:11 4th  100
+undefined
+rrrr;
+10000
+window.rrrr;
+10000
+function test(){
+//console.log('1st ',v);
+rrrr = 10000;
+let v = 100;
+console.log('2nd ',v);
+if(10>2){
+let v = 200;
+console.log('3rd ',v);
+}
+//let v = 400;
+console.log('4th ',v);
+}
+undefined
+function jQuery(){
+console.log(arguments.length);
+}
+undefined
+jQuery('#id');
+VM2464:2 1
+undefined
+jQuery(window);
+VM2464:2 1
+undefined
+var $=jQuery;
+undefined
+typeof $;
+"function"
+$;
+ƒ jQuery(){
+console.log(arguments.length);
+}
+$('#id');
+VM2464:2 1
+undefined
+console.dir(add);
+VM2729:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1460:1[[Scopes]]: Scopes[2]
+undefined
+function test2(...args){
+var sum = 0;
+for(let i = 0; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+undefined
+test();
+VM2359:5 2nd  100
+VM2359:8 3rd  200
+VM2359:11 4th  100
+undefined
+test2();
+0
+test2(1,2,3,4,5);
+15
+function test2(...args){
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+console.log(typeof args);
+console.log(args instanceof Array);
+var sum = 0;
+for(let i = 0; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+undefined
+test2(1,2);
+VM3230:2 object
+VM3230:3 false
+VM3230:4 object
+VM3230:5 true
+3
+var arr  = [10,20];
+undefined
+add.arguments
+null
+function test2(...args){
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+arguments.sort();
+console.log(typeof args);
+console.log(args instanceof Array);
+args.sort();
+var sum = 0;
+for(let i = 0; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+undefined
+test2(1,2);
+VM3392:2 object
+VM3392:3 false
+VM3392:4 Uncaught TypeError: arguments.sort is not a function
+    at test2 (<anonymous>:4:11)
+    at <anonymous>:1:1
+test2 @ VM3392:4
+(anonymous) @ VM3402:1
+function test2(x,y,...args){
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+arguments.sort();
+console.log(typeof args);
+console.log(args instanceof Array);
+args.sort();
+var sum = 0;
+for(let i = 0; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+undefined
+function test2(x,y,...args,...y){
+console.log(typeof arguments);
+console.log(arguments instanceof Array);
+arguments.sort();
+console.log(typeof args);
+console.log(args instanceof Array);
+args.sort();
+var sum = 0;
+for(let i = 0; i<args.length; i++){
+sum+=args[i];
+}
+return sum;
+}
+VM3435:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+var arr = [1,2,3];
+undefined
+var arr2 = [90,100];
+undefined
+var arr3 = [arr,arr2];
+undefined
+arr3;
+(2) [Array(3), Array(2)]0: (3) [1, 2, 3]1: (2) [90, 100]length: 2__proto__: Array(0)
+arr3 = [...arr, ...arr3];
+(5) [1, 2, 3, Array(3), Array(2)]
+arr3 = [...arr, ...arr2];
+(5) [1, 2, 3, 90, 100]
+function adder(x,y){
+return x + y;
+}
+undefined
+adder();
+NaN
+function adder(x,y){
+console.log('X is ',x, 'And y is ',y);
+return x + y;
+}
+undefined
+adder();
+VM3769:2 X is  undefined And y is  undefined
+NaN
+undefined + undefined;
+NaN
+function adder(x=0,y=0){
+console.log('X is ',x, 'And y is ',y);
+return x + y;
+}
+undefined
+adder();
+VM3837:2 X is  0 And y is  0
+0
+adder(NaN,NaN);
+VM3837:2 X is  NaN And y is  NaN
+NaN
+adder(null, null);
+VM3837:2 X is  null And y is  null
+0
+null + null;
+0
+adder("","");
+VM3837:2 X is   And y is  
+""
+adder(0,"");
+VM3837:2 X is  0 And y is  
+"0"
+var x;
+undefined
+x?true:false;
+true
+x;
+2000
+var x1;
+undefined
+x1?true:false;
+false
+x1="";
+""
+x1?true:false;
+false
+x1=0;
+0
+x1?true:false;
+false
+x=null;
+null
+x1?true:false;
+false
+x1=100;
+100
+x1?true:false;
+true
+function adder(x,y){
+console.log('X is ',x, 'And y is ',y);
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
+adder();
+VM4396:2 X is  undefined And y is  undefined
+0
+adder(NaN,NaN);
+VM4396:2 X is  NaN And y is  NaN
+0
+adder("",NaN);
+VM4396:2 X is   And y is  NaN
+0
