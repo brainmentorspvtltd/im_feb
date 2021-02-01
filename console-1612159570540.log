@@ -1,0 +1,393 @@
+var a;
+undefined
+typeof a;
+"undefined"
+a=1000;
+1000
+typeof a;
+"number"
+a=1;
+1
+typeof a;
+"number"
+a=111111111;
+111111111
+typeof a;
+"number"
+a=10.20;
+10.2
+typeof a;
+"number"
+a='Amit';
+"Amit"
+typeof a;
+"string"
+a=true;
+true
+typeof a;
+"boolean"
+a=1000;
+1000
+typeof a;
+"number"
+a=100.29;
+100.29
+typeof a;
+"number"
+a=100/0;
+Infinity
+typeof a;
+"number"
+a=100 / "zero";
+NaN
+typeof a;
+"number"
+a=100/0;
+Infinity
+isFinite(a)?a:0;
+0
+a=100/"zero";
+NaN
+isNaN(a)?0:a;
+0
+100 + "100"
+"100100"
+100 + parseInt("100");
+200
+100 + parseFloat("100.20");
+200.2
+100 + 100 +"200";
+"200200"
+"200"+100+100
+"200100100"
+"100"-100;
+0
+"100"*3;
+300
+"100"/3;
+33.333333333333336
+2 *2;
+4
+2**3;
+8
+var name = "Amit";
+undefined
+typeof name;
+"string"
+name = 'Amit';
+"Amit"
+typeof name;
+"string"
+name =`hgjkdfhgjkdfghjdfkjgh
+ghkdfkjghfdgkjdfh
+gdfjkghfdkgdh`;
+"hgjkdfhgjkdfghjdfkjgh
+ghkdfkjghfdgkjdfh
+gdfjkghfdkgdh"
+name;
+"hgjkdfhgjkdfghjdfkjgh
+ghkdfkjghfdgkjdfh
+gdfjkghfdkgdh"
+typeof name;
+"string"
+var x = 100;
+undefined
+var y = 200;
+undefined
+var msg = "X is "+x+" and Y is "+y;
+undefined
+msg;
+"X is 100 and Y is 200"
+console.log(msg);
+VM1352:1 X is 100 and Y is 200
+undefined
+var sum = "X is "+x+" and Y is "+y+" Sum is "+(x+y);
+undefined
+sum;
+"X is 100 and Y is 200 Sum is 300"
+sum = `X is ${x} Y is ${y} and Sum is ${x+y}`;
+"X is 100 Y is 200 and Sum is 300"
+var att = true;
+undefined
+typeof att;
+"boolean"
+att = false;
+false
+typeof att;
+"boolean"
+true + true;
+2
+100 + true;
+101
+a = 1000;
+1000
+var bag = {};
+undefined
+typeof bag;
+"object"
+var bag = {
+pencils:5,
+pen:2,
+books:3
+}
+undefined
+bag;
+{pencils: 5, pen: 2, books: 3}
+bag = null;
+null
+typeof bag;
+"object"
+var t;
+undefined
+typeof t;
+"undefined"
+100 +  null;
+100
+100 + undefined;
+NaN
+var a =  Number.MAX_SAFE_INTEGER;
+undefined
+a;
+9007199254740991
+++a;
+9007199254740992
+++a;
+9007199254740992
+++a;
+9007199254740992
+typeof a;
+"number"
+a = 9007199254740992n;
+9007199254740992n
+typeof a;
+"bigint"
+++a;
+9007199254740993n
+++a;
+9007199254740994n
+++a;
+9007199254740995n
+a + 545453n;
+9007199255286448n
+var bb = "64564564564564534534543";
+undefined
+var f1 = BigInt(bb);
+undefined
+f1;
+64564564564564534534543n
+f1 + BigInt("545435343423423432");
+64565109999907957957975n
+typeof BigInt;
+"function"
+BigInt("545435435435435345435n");
+VM2488:1 Uncaught SyntaxError: Cannot convert 545435435435435345435n to a BigInt
+    at BigInt (<anonymous>)
+    at <anonymous>:1:1
+(anonymous) @ VM2488:1
+9007199254740992 * 9007199254740992;
+8.112963841460668e+31
+9007199254740992n * 9007199254740992n;
+81129638414606681695789005144064n
+var ff =9007199254740992 * 9007199254740992;
+undefined
+typeof ff;
+"number"
+ff;
+8.112963841460668e+31
+ff = 9007199254740992 + 9007199254740992;
+18014398509481984
+typeof ff;
+"number"
+Number.MAX_SAFE_INTEGER; 
+9007199254740991
+var b1 = 78787;
+undefined
+typeof b1;
+"number"
+typeof Number;
+"function"
+var arr = [10,20,30,40,50];
+undefined
+typeof arr;
+"object"
+var obj = {id:1001, name:'Ram'};
+undefined
+typeof obj;
+"object"
+arr instanceof Array;
+true
+typeof Array;
+"function"
+obj instanceof Object;
+true
+typeof Object;
+"function"
+arr instanceof Object;
+true
+arr.length;
+5
+arr.sort();
+(5) [10, 20, 30, 40, 50]
+var x= 100;
+
+undefined
+typeof x;
+"number"
+var y = new Number(100);
+undefined
+y;
+Number {100}
+typeof y;
+"object"
+var z = "Amit";
+undefined
+typeof z;
+"string"
+var z1 = new String("Amit");
+undefined
+z1;
+String {"Amit"}
+typeof z1;
+"object"
+var p = new Boolean(true);
+undefined
+typeof p;
+"object"
+z1;
+String {"Amit"}
+typeof z1;
+"object"
+z1.toUpperCase();
+"AMIT"
+y;
+Number {100}
+typeof y;
+"object"
+y.toLocaleString('hi-IN');
+"100"
+var y = new Number(100000);
+undefined
+y.toLocaleString('hi-IN');
+"1,00,000"
+var y = new Number(100000.99);
+undefined
+y.toLocaleString('hi-IN');
+"1,00,000.99"
+y.toLocaleString('fr-FR');
+"100 000,99"
+var g1 = 10000;
+undefined
+typeof g1;
+"number"
+g1.toLocaleString('hi-IN');
+"10,000"
+var g2 = "Amit";
+undefined
+g2.toUpperCase();
+"AMIT"
+typeof g2;
+"string"
+g2;
+"Amit"
+g2 = g2.toUpperCase();
+"AMIT"
+typeof g2;
+"string"
+var price = 10000.20;
+undefined
+price * 0.18;
+1800.036
+price.toLocaleString('fr-FR');
+"10 000,2"
+price;
+10000.2
+var hh = price.toLocaleString('fr-FR');
+undefined
+hh;
+"10 000,2"
+price;
+10000.2
+typeof hh;
+"string"
+typeof price;
+"number"
+var name = "Amit";
+undefined
+name.toUpperCase();
+"AMIT"
+name;
+"Amit"
+var arr = [90,1000,2,9,5,200];
+undefined
+arr.sort();
+(6) [1000, 2, 200, 5, 9, 90]
+arr;
+(6) [1000, 2, 200, 5, 9, 90]
+var arr = [90,10,2,9,5,12];
+undefined
+arr.sort();
+(6) [10, 12, 2, 5, 9, 90]
+arr.sort();
+(6) [10, 12, 2, 5, 9, 90]
+var arr = [90,10,12,19,15,12];
+undefined
+arr.sort();
+(6) [10, 12, 12, 15, 19, 90]
+arr;
+(6) [10, 12, 12, 15, 19, 90]
+var arr = [90,10,12,19,15,12];
+undefined
+var x = arr;
+undefined
+x[0]=14;
+14
+arr;
+(6) [14, 10, 12, 19, 15, 12]
+x;
+(6) [14, 10, 12, 19, 15, 12]
+var gg = 100;
+undefined
+var g1 = gg;
+undefined
+++gg;
+101
+g1;
+100
+gg;
+101
+var g2 = [...arr];
+undefined
+g2;
+(6) [14, 10, 12, 19, 15, 12]
+arr;
+(6) [14, 10, 12, 19, 15, 12]
+arr[0]=17;
+17
+g2;
+(6) [14, 10, 12, 19, 15, 12]
+arr;
+(6) [17, 10, 12, 19, 15, 12]
+g2.sort();
+(6) [10, 12, 12, 14, 15, 19]
+g2;
+(6) [10, 12, 12, 14, 15, 19]
+arr;
+(6) [17, 10, 12, 19, 15, 12]
+var ff = Object.assign([],arr);
+undefined
+ff;
+(6) [17, 10, 12, 19, 15, 12]
+var ff = Object.assign([888,88888],arr);
+undefined
+ff;
+(6) [17, 10, 12, 19, 15, 12]
+var ff = Object.assign({id:1001},{name:'Ram'});
+undefined
+ff;
+{id: 1001, name: "Ram"}
+var ff = {...{id:1001},...{name:'Ram'}};
+undefined
+ff;
+{id: 1001, name: "Ram"}
+x= "Amit";
+"Amit"
