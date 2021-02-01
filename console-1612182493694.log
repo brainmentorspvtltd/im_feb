@@ -1,0 +1,102 @@
+var arr = [10,20,9,1,1000];
+undefined
+arr.push(1111);
+6
+arr;
+(6) [10, 20, 9, 1, 1000, 1111]
+arr.pop();
+1111
+arr;
+(5) [10, 20, 9, 1, 1000]
+arr.splice(1);
+(4) [20, 9, 1, 1000]
+arr;
+[10]
+var arr = [10,20,9,1,1000];
+undefined
+arr.splice(1,1);
+[20]
+arr;
+(4) [10, 9, 1, 1000]
+arr.splice(1,1,9999);
+[9]
+arr;
+(4) [10, 9999, 1, 1000]
+arr.splice(1,0,2222);
+[]
+arr;
+(5) [10, 2222, 9999, 1, 1000]
+arr.splice(1,0,11,10,14);
+[]
+arr;
+(8) [10, 11, 10, 14, 2222, 9999, 1, 1000]
+typeof arr;
+"object"
+arr instanceof Array;
+true
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+typeof Array.prototype;
+"object"
+Array.prototype.sort
+ƒ sort() { [native code] }
+Array.prototype.push;
+ƒ push() { [native code] }
+var a = [10,20,30];
+undefined
+var b = [90,100,43243];
+undefined
+a==b;
+false
+a;
+(3) [10, 20, 30]0: 101: 202: 30length: 3__proto__: Array(0)
+b;
+(3) [90, 100, 43243]
+a.__proto__;
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+Array.prototype;
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+a.__proto__ == Array.prototype;
+true
+b.__proto__ == Array.prototype;
+true
+Array.prototype.insert
+undefined
+Array.prototype.insert= function(index,val){
+this.splice(index,0,val);
+return this.length;
+}
+ƒ (index,val){
+this.splice(index,0,val);
+return this.length;
+}
+arr;
+(8) [10, 11, 10, 14, 2222, 9999, 1, 1000]
+arr.insert(1,888888);
+9
+arr;
+(9) [10, 888888, 11, 10, 14, 2222, 9999, 1, 1000]
+var d = {id:1111,show(){}};
+undefined
+d.id;
+1111
+arr.length;
+9
+d.show();
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+window instanceof Window;
+true
+window instanceof Object;
+true
+typeof Window;
+"function"
+Window.prototype
+Window {TEMPORARY: 0, PERSISTENT: 1, Symbol(Symbol.toStringTag): "Window", constructor: ƒ}
+Window.prototype.open
+undefined
+Window.prototype;
+Window {TEMPORARY: 0, PERSISTENT: 1, Symbol(Symbol.toStringTag): "Window", constructor: ƒ}PERSISTENT: 1TEMPORARY: 0constructor: ƒ Window()Symbol(Symbol.toStringTag): "Window"__proto__: WindowProperties
+window.open;
+ƒ open() { [native code] }

@@ -1,0 +1,387 @@
+function show(){
+console.log("I am Show ");
+}
+show();
+VM157:2 I am Show 
+undefined
+show();
+function show(){
+console.log("I am Show ");
+}
+
+VM166:3 I am Show 
+undefined
+var a =100;
+undefined
+var a =  function(){
+console.log('Anonymous Fn or Function Expression');
+}
+undefined
+a();
+VM305:2 Anonymous Fn or Function Expression
+undefined
+b();
+var b =  function(){
+console.log('Anonymous Fn or Function Expression');
+}
+VM339:1 Uncaught TypeError: b is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM339:1
+function add(x,y){
+return x + y;
+}
+undefined
+window.add;
+ƒ add(x,y){
+return x + y;
+}
+function Calc(){
+var add = function (x,y){
+return x + y;
+}
+var sub = function(x,y){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+var t = Calc();
+undefined
+typeof t;
+"object"
+t instanceof Array;
+true
+t[0];
+ƒ (x,y){
+return x + y;
+}
+typeof t[0];
+"function"
+t[0](100,200);
+300
+t;
+(2) [ƒ, ƒ]0: ƒ (x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM637:2[[Scopes]]: Scopes[1]1: ƒ (x,y)length: 2__proto__: Array(0)
+t[1](100,200);
+-100
+function Calc(){
+var add = function addition(x,y){
+return x + y;
+}
+var sub = function subtract(x,y){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+var t1 = Calc();
+undefined
+t1;
+(2) [ƒ, ƒ]0: ƒ addition(x,y)1: ƒ subtract(x,y)length: 2__proto__: Array(0)
+t1[0](100,200);
+300
+t1[0];
+ƒ addition(x,y){
+return x + y;
+}
+t1[0].name;
+"addition"
+t;
+(2) [ƒ, ƒ]0: ƒ (x,y)1: ƒ (x,y)length: 2__proto__: Array(0)
+t[0];
+ƒ (x,y){
+return x + y;
+}
+t[0].name;
+"add"
+t1;
+(2) [ƒ, ƒ]0: ƒ addition(x,y)1: ƒ subtract(x,y)length: 2__proto__: Array(0)
+t;
+(2) [ƒ, ƒ]0: ƒ (x,y)1: ƒ (x,y)length: 2__proto__: Array(0)
+function Calc(){
+var add = function addition(x,y){
+return x + y;
+}
+var sub = function subtract(x,y){
+return x - y;
+}
+return {"adder":add,"sub":sub};
+}
+undefined
+var t3 = Calc();
+undefined
+t3;
+{adder: ƒ, sub: ƒ}
+t3["adder"];
+ƒ addition(x,y){
+return x + y;
+}
+t3["adder"]();
+NaN
+t3["adder"](10,20);
+30
+typeof Calc
+"function"
+Calc()["adder"](100,200);
+300
+function Calc(z){
+
+var add = function addition(x,y){
+return x + y + z;
+}
+var sub = function subtract(x,y){
+return x - y - z;
+}
+return {"adder":add,"sub":sub};
+}
+undefined
+var bb = Calc(100);
+undefined
+bb;
+{adder: ƒ, sub: ƒ}adder: ƒ addition(x,y)arguments: nullcaller: nulllength: 2name: "addition"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1479:3[[Scopes]]: Scopes[2]0: Closure (Calc) {z: 100}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}sub: ƒ subtract(x,y)arguments: nullcaller: nulllength: 2name: "subtract"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1479:6[[Scopes]]: Scopes[2]0: Closure (Calc) {z: 100}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}__proto__: Object
+bb['adder'](1,2);
+103
+bb['sub'](1,2);
+-101
+bb;
+{adder: ƒ, sub: ƒ}adder: ƒ addition(x,y)arguments: nullcaller: nulllength: 2name: "addition"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1479:3[[Scopes]]: Scopes[2]0: Closure (Calc) {z: 100}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}sub: ƒ subtract(x,y)__proto__: Object
+function init(){
+var counter = 0;
+var count = function(){
+return ++counter;
+}
+return count;
+}
+undefined
+var t = init();
+undefined
+typeof t;
+"function"
+t;
+ƒ (){
+return ++counter;
+}
+t();
+1
+t();
+2
+t();
+3
+t();
+4
+t();
+5
+counter;
+VM1990:1 Uncaught ReferenceError: counter is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1990:1
+t;
+ƒ (){
+return ++counter;
+}
+console.dir(t);
+VM2059:1 ƒ count()arguments: nullcaller: nulllength: 0name: "count"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1846:3[[Scopes]]: Scopes[2]0: Closure (init) {counter: 5}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+t();
+6
+console.dir(t);
+VM2078:1 ƒ count()arguments: nullcaller: nulllength: 0name: "count"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1846:3[[Scopes]]: Scopes[2]0: Closure (init) {counter: 6}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var t = init();
+undefined
+console.dir(t);
+VM2146:1 ƒ count()arguments: nullcaller: nulllength: 0name: "count"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM1846:3[[Scopes]]: Scopes[2]0: Closure (init) {counter: 0}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+t();
+1
+t();
+2
+t = (function (){
+var counter = 0;
+var count = function(){
+return ++counter;
+}
+return count;
+})();
+ƒ (){
+return ++counter;
+}
+t();
+1
+t();
+2
+t();
+3
+t();
+4
+function show(){
+console.log('I is ',i);
+(function(){
+for(var i = 1; i<=10; i++){
+console.log('I is ',i);
+})();
+}
+
+}
+VM2421:6 Uncaught SyntaxError: Unexpected token ')'
+function show(){
+console.log('I is ',i);
+(function(){
+for(var i = 1; i<=10; i++){
+console.log('I is ',i);
+}
+})();
+
+
+}
+undefined
+show();
+VM2431:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:21)
+    at <anonymous>:1:1
+show @ VM2431:2
+(anonymous) @ VM2451:1
+function show(){
+//console.log('I is ',i);
+(function(){
+for(var i = 1; i<=10; i++){
+console.log('I is ',i);
+}
+})();
+
+
+}
+undefined
+show();
+VM2459:5 I is  1
+VM2459:5 I is  2
+VM2459:5 I is  3
+VM2459:5 I is  4
+VM2459:5 I is  5
+VM2459:5 I is  6
+VM2459:5 I is  7
+VM2459:5 I is  8
+VM2459:5 I is  9
+VM2459:5 I is  10
+undefined
+var add =  (x,y)=>x + y;
+
+undefined
+typeof add;
+"function"
+add(10,20);
+30
+var add =  (x,y)=>{
+console.log('X is ',x,'Y is ',y);
+return x + y;
+}
+
+undefined
+add(10,20);
+VM2747:2 X is  10 Y is  20
+30
+var cache = {};
+function doWork(num){
+if(cache[num]){
+    console.log('Coming from the Cache',cache[num]);
+    return ;
+}
+for(let i = 1; i<=100000; i++){
+for(let j=1;j<=10000; j++){
+}
+}
+cache[num] = num * num;
+console.log('Compute It ',cache[num]);
+}
+undefined
+cache;
+{}
+doWork(3);
+VM3118:12 Compute It  9
+undefined
+cache;
+{3: 9}
+doWork(5);
+VM3118:12 Compute It  25
+undefined
+var cache = {};
+function doWork(num){
+if(cache[num]){
+    console.log('Coming from the Cache',cache[num]);
+    return ;
+}
+for(let i = 1; i<=400000; i++){
+for(let j=1;j<=10000; j++){
+}
+}
+cache[num] = num * num;
+console.log('Compute It ',cache[num]);
+}
+undefined
+doWork(7);
+VM3220:12 Compute It  49
+undefined
+cache;
+{7: 49}
+doWork(7);
+VM3220:4 Coming from the Cache 49
+undefined
+doWork(9);
+VM3220:12 Compute It  81
+undefined
+cache;
+{7: 49, 9: 81}
+doWork(9);
+VM3220:4 Coming from the Cache 81
+undefined
+function dal(){
+return  "Yellow Dal" +  (function oil(){
+    return  "Coc Oil" + (function salt(){
+            return "Tata Salt ";
+}) 
+}) 
+}
+undefined
+function dal(){
+return   (function oil(){
+    return   (function salt(){
+            return "Tata Salt ";
+}) + "Coc Oil" 
+}) + "Yellow Dal" ;
+}
+undefined
+var oil = dal();
+undefined
+oil;
+"function oil(){
+    return   (function salt(){
+            return "Tata Salt ";
+}) + "Coc Oil" 
+}Yellow Dal"
+function dal(str){
+    return function salt(saltName){
+        return function oil(oilName){
+                return str + saltName + oilName;
+}
+}
+}
+undefined
+dal('Yellow Dal')('Tata')('C Oil');
+"Yellow DalTataC Oil"
+var d = dal('Yellow Dal');
+undefined
+typeof d;
+"function"
+d;
+ƒ salt(saltName){
+        return function oil(oilName){
+                return str + saltName + oilName;
+}
+}
+var o = d('Tata');
+undefined
+o;
+ƒ oil(oilName){
+                return str + saltName + oilName;
+}
+o('C');
+"Yellow DalTataC"

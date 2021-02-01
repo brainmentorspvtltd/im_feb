@@ -1,0 +1,28 @@
+var x= function(){}
+undefined
+x = 100;
+100
+const MAX = 100;
+undefined
+MAX++;
+VM159:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM159:1
+const add = (x,y)=>x+y;
+undefined
+add(10,20);
+30
+add = 1000;
+VM281:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM281:1
+const w = [100,200,300];
+undefined
+w=[1000,2000];
+VM367:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:2
+(anonymous) @ VM367:1
+w[0] = 1000;
+1000
+w;
+(3) [1000, 200, 300]

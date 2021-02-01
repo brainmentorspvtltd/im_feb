@@ -1,0 +1,205 @@
+function songOperations(){
+
+const add = (songName)=>{
+}
+const print = ()=>{
+}
+const search = (songName)=>{
+}
+return {add, print, search}
+}
+undefined
+songOperations();
+{add: ƒ, print: ƒ, search: ƒ}
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+
+}
+const print = ()=>{
+}
+const search = (songName)=>{
+}
+return {add, print, search}
+}
+undefined
+var x = [10,20,30,40];
+undefined
+x.includes(20);
+true
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+if(songs.includes(songName)){
+return "Song is Already Present ";
+}
+else{
+songs.push(songName);
+return "Song is Added";
+}
+}
+const print = ()=>{
+for(let i = 0;i<songs.length; i++){
+console.log(songs[i]);
+}
+}
+const search = (songName)=>{
+return song.includes(songName)?'Found':'Not Found';
+}
+return {add, print, search}
+}
+undefined
+var songOpr = songOperations();
+undefined
+songOpr.add('Bang Bang');
+"Song is Added"
+songOpr.add('Bang Bang');
+"Song is Already Present "
+songOpr.add('Boom Boom');
+"Song is Added"
+songOpr.add('Boom Boom');
+"Song is Already Present "
+songOpr.search('Bang Bang');
+VM719:18 Uncaught ReferenceError: song is not defined
+    at Object.search (<anonymous>:18:1)
+    at <anonymous>:1:9
+search @ VM719:18
+(anonymous) @ VM940:1
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+if(songs.includes(songName)){
+return "Song is Already Present ";
+}
+else{
+songs.push(songName);
+return "Song is Added";
+}
+}
+const print = ()=>{
+for(let i = 0;i<songs.length; i++){
+console.log(songs[i]);
+}
+}
+const search = (songName)=>{
+return songs.includes(songName)?'Found':'Not Found';
+}
+return {add, print, search}
+}
+undefined
+songOpr.search('Bang Bang');
+VM719:18 Uncaught ReferenceError: song is not defined
+    at Object.search (<anonymous>:18:1)
+    at <anonymous>:1:9
+search @ VM719:18
+(anonymous) @ VM961:1
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+if(songs.includes(songName)){
+return "Song is Already Present ";
+}
+else{
+songs.push(songName);
+return "Song is Added";
+}
+}
+const print = ()=>{
+for(let i = 0;i<songs.length; i++){
+console.log(songs[i]);
+}
+}
+const search = (songName)=>{
+return songs.includes(songName)?'Found':'Not Found';
+}
+return {add, print, search}
+}
+undefined
+var songOpr = songOperations();
+undefined
+songOpr.add('Bang Bang');
+"Song is Added"
+songOpr.add('Boom Boom');
+"Song is Added"
+songOpr.search('Bang Bang');
+"Found"
+songOpr.print();
+VM966:14 Bang Bang
+VM966:14 Boom Boom
+undefined
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+if(songs.includes(songName)){
+return "Song is Already Present ";
+}
+else{
+songs.push(songName);
+return "Song is Added";
+}
+}
+const print = ()=>{
+for(let i = 0;i<songs.length; i++){
+console.log(songs[i]);
+}
+}
+const search = (songName)=>{
+return songs.includes(songName.startsWith('B'))?'Found':'Not Found';
+}
+return {add, print, search}
+}
+undefined
+var songOpr = songOperations();
+undefined
+songOpr.add('Boom Boom');
+"Song is Added"
+songOpr.search('Bang Bang');
+"Not Found"
+function songOperations(){
+const songs = [];
+const add = (songName)=>{
+if(songs.includes(songName)){
+return "Song is Already Present ";
+}
+else{
+songs.push(songName);
+return "Song is Added";
+}
+}
+const print = ()=>{
+for(let i = 0;i<songs.length; i++){
+console.log(songs[i]);
+}
+}
+const search = (startLetter)=>{
+for(let i = 0;i<songs.length; i++){
+if(songs[i].startsWith(startLetter)){
+return "Found";
+}
+
+}
+return "Not Found";
+}
+return {add, print, search}
+}
+undefined
+var songOpr = songOperations();
+undefined
+songOpr.add('Boom Boom');
+"Song is Added"
+songOpr.search('B');
+"Found"
+songOpr.add('ABC');
+"Song is Added"
+songOpr.search('A');
+"Found"
+var songs = {"B","A","C"};
+VM1437:1 Uncaught SyntaxError: Unexpected token ','
+var songs = {"A":"ABCD","B":"WWW"};
+undefined
+songs["A"];
+"ABCD"
+var arr2 = [100,20];
+undefined
+arr2.insert;
+undefined
