@@ -1,0 +1,109 @@
+var obj = {id:1001, name:'A',cost:2,remarks:'fsdf',url:'fs'};
+undefined
+typeof obj;
+"object"
+obj.id;
+1001
+obj["id"];
+1001
+obj.1 = 2;
+VM209:1 Uncaught SyntaxError: Unexpected number
+obj[1]=2;
+2
+obj;
+{1: 2, id: 1001, name: "A", cost: 2, remarks: "fsdf", url: "fs"}
+obj.1;
+VM284:1 Uncaught SyntaxError: Unexpected number
+obj[1];
+2
+obj["a b"]=4242;
+4242
+obj["a b"];
+4242
+function createExpense(id, name, cost, remarks, url){
+var obj = {}; // Object Literal
+obj.id = id;
+obj.name = name;
+obj.cost = cost;
+obj.remarks = remarks;
+obj.url = url;
+return obj;
+}
+undefined
+var e = createExpense(1001, "A",2000,"fsdfds","www.abc.com");
+undefined
+e;
+{id: 1001, name: "A", cost: 2000, remarks: "fsdfds", url: "www.abc.com"}
+typeof e;
+"object"
+e instanceof Obj;
+VM855:1 Uncaught ReferenceError: Obj is not defined
+    at <anonymous>:1:14
+(anonymous) @ VM855:1
+e instanceof Object;
+true
+function Expense(id, name, cost, remarks, url){
+//var this = {}; // Object Literal
+this.id = id;
+this.name = name;
+this.cost = cost;
+this.remarks = remarks;
+this.url = url;
+//return this;
+}
+var e= new Expense(1001, "Abc",2222,"fsfsd","www.abc.com/a.jpg");
+undefined
+e;
+Expense {id: 1001, name: "Abc", cost: 2222, remarks: "fsfsd", url: "www.abc.com/a.jpg"}
+e instanceof Expense;
+true
+e instanceof Object;
+true
+class Expense{
+constructor(id, name, cost, remarks, url){
+this.id = id;
+this.name = name;
+this.cost = cost;
+this.remarks = remarks;
+this.url = url;
+}
+}
+VM1424:1 Uncaught SyntaxError: Identifier 'Expense' has already been declared
+class MyExpense{
+constructor(id, name, cost, remarks, url){
+this.id = id;
+this.name = name;
+this.cost = cost;
+this.remarks = remarks;
+this.url = url;
+}
+}
+undefined
+var e2 = new MyExpense(1001,"Abc",9999,"abc","abcd");
+undefined
+e2;
+MyExpense {id: 1001, name: "Abc", cost: 9999, remarks: "abc", url: "abcd"}
+typeof e2;
+"object"
+e2 instanceof MyExpense;
+true
+typeof MyExpense;
+"function"
+var obj = {};
+undefined
+var id = 1001;
+undefined
+var name = "Ram";
+undefined
+var obj = {id, name};
+undefined
+obj;
+{id: 1001, name: "Ram"}
+obj;
+{id: 1001, name: "Ram"}
+for(let key in obj){
+console.log(key, " ",obj[key]);
+}
+VM1984:2 id   1001
+VM1984:2 name   Ram
+undefined
