@@ -1,0 +1,191 @@
+var b = 100;
+function show(){
+// var a;
+console.log(a); // undefined
+if(10>2){
+// a = 100;
+var a = 100;
+}
+console.log(a);
+}
+undefined
+show();
+VM232:4 undefined
+VM232:9 100
+undefined
+a;
+VM264:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM264:1
+b;
+100
+window.b;
+100
+class A{
+
+}
+class B extends A{
+
+}
+undefined
+typeof B;
+"function"
+var x = 100;
+undefined
+`X is ${x}`;
+"X is 100"
+function whoAmI(){
+console.log('My Name is ',this.name);
+}
+undefined
+var name = 'Amit';
+undefined
+window.name;
+"Amit"
+whoAmI(); 
+VM537:2 My Name is  Amit
+undefined
+window.whoAmI();
+VM537:2 My Name is  Amit
+undefined
+var obj = {name:'Ram'};
+undefined
+window.whoAmI();
+VM537:2 My Name is  Amit
+undefined
+function whoAmI(){
+console.log(window == this);
+console.log('My Name is ',this.name);
+}
+undefined
+whoAmI();
+VM854:2 true
+VM854:3 My Name is  Amit
+undefined
+window.whoAmI();
+VM854:2 true
+VM854:3 My Name is  Amit
+undefined
+obj;
+{name: "Ram"}
+var fn = window.whoAmI.bind(obj);
+undefined
+fn();
+VM854:2 false
+VM854:3 My Name is  Ram
+undefined
+function useState(initValue){
+return [initValue,()=>{}];
+}
+undefined
+var r = useState(0);
+undefined
+r;
+(2) [0, ƒ]
+var arr = [10,20,30,40];
+undefined
+var t = arr[0];
+undefined
+t;
+10
+var t2 = arr[1];
+undefined
+t2;
+20
+var [x,y] = arr;
+undefined
+x;
+10
+y;
+20
+arr;
+(4) [10, 20, 30, 40]
+var [x,,y] = arr';
+VM1450:1 Uncaught SyntaxError: Invalid or unexpected token
+var [x,,y] = arr;
+undefined
+x;
+10
+y;
+30
+var obj ={id:1001, name:'Amit'};
+undefined
+var {name, id }= obj;
+undefined
+name;
+"Amit"
+id;
+1001
+var [x,y] = useState(0);
+undefined
+x;
+0
+y;
+()=>{}
+whoAmI;
+ƒ whoAmI(){
+console.log(window == this);
+console.log('My Name is ',this.name);
+}
+whoAmI();
+VM854:2 true
+VM854:3 My Name is  Amit
+undefined
+fn();
+VM854:2 false
+VM854:3 My Name is  Ram
+undefined
+whoAmI.call(obj);
+VM854:2 false
+VM854:3 My Name is  Amit
+undefined
+obj;
+{id: 1001, name: "Amit"}
+obj.name="Shyam";
+"Shyam"
+whoAmI.call(obj);
+VM854:2 false
+VM854:3 My Name is  Shyam
+undefined
+var g = whoAmI.bind(obj);
+undefined
+g();
+VM854:2 false
+VM854:3 My Name is  Shyam
+undefined
+g();
+VM854:2 false
+VM854:3 My Name is  Shyam
+undefined
+whoAmI.apply(obj);
+VM854:2 false
+VM854:3 My Name is  Shyam
+undefined
+function whoAmI(x,y,z){
+console.log(window == this);
+console.log('My Name is ',this.name, x , y, z);
+}
+undefined
+var ff = whoAmI.bind();
+undefined
+ff(10,20,30);
+VM2098:2 true
+VM2098:3 My Name is  Amit 10 20 30
+undefined
+ff(10,20,30);
+VM2098:2 true
+VM2098:3 My Name is  Amit 10 20 30
+undefined
+whoAmI.call(obj,10000,20000,3000);
+VM2098:2 false
+VM2098:3 My Name is  Shyam 10000 20000 3000
+undefined
+var arr = [1000,4343,6565,756767,87878,4334,23232,43435,545,4,656,76];
+whoAmI.apply(obj,arr);
+VM2098:2 false
+VM2098:3 My Name is  Shyam 1000 4343 6565
+undefined
+ whoAmI.bind()(100,20,30);
+VM2098:2 true
+VM2098:3 My Name is  Amit 100 20 30
+undefined
