@@ -1,0 +1,32 @@
+var b = 100;
+function show(){
+// var a;
+console.log(a); // undefined
+if(10>2){
+// a = 100;
+var a = 100;
+}
+console.log(a);
+}
+undefined
+show();
+VM232:4 undefined
+VM232:9 100
+undefined
+a;
+VM264:1 Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM264:1
+b;
+100
+window.b;
+100
+class A{
+
+}
+class B extends A{
+
+}
+undefined
+typeof B;
+"function"
